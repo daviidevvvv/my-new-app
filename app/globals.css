@@ -95,6 +95,12 @@ body {
   font-size: 13px;
 }
 
+.diet-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .template-list {
   display: grid;
   gap: 12px;
@@ -175,6 +181,54 @@ body {
 }
 
 .field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.macro-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.macro-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.macro-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(45, 108, 255, 0.12);
+  color: var(--accent);
+  font-size: 12px;
+}
+
+.meal-form {
+  display: grid;
+  gap: 10px;
+}
+
+.meal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meal-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.history-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -373,5 +427,13 @@ body {
 
   .inline-row {
     grid-template-columns: 1fr auto;
+  }
+
+  .macro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal-form {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
