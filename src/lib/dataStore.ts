@@ -262,6 +262,16 @@ export const exportGymcutData = async (): Promise<string> => {
   return JSON.stringify(data, null, 2);
 };
 
+export const exportWeighInsCsv = async () => {
+  const weighIns = await listWeighIns();
+  const header = "date,weightKg,notes";
+  const rows = weighIns.map((entry) => {
+    const notes = entry.notes ? entry.notes.replaceAll("\"", "\"\"") : "";
+    return `${entry.date},${entry.weightKg},\"${notes}\"`;
+  });
+  return [header, ...rows].join("\n");
+};
+
 export const importGymcutData = async (json: string) => {
   let parsed: Partial<GymcutData> | null = null;
   try {
