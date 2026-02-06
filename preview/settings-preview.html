@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GymCut Companion – Settings Preview</title>
+    <link rel="stylesheet" href="../app/globals.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="settings-page">
+        <header class="page-header">
+          <p class="eyebrow">GymCut Companion</p>
+          <h1>Settings</h1>
+          <p class="subtitle">
+            Personalizza i target e gestisci i backup dei tuoi dati.
+          </p>
+        </header>
+
+        <section class="section">
+          <div class="section-header">
+            <h2>Target default</h2>
+            <p>Valori base applicati alle nuove giornate dieta.</p>
+          </div>
+          <div class="card form-card">
+            <div class="macro-grid">
+              <label class="field">
+                <span>Calorie</span>
+                <input type="number" value="2000" />
+              </label>
+              <label class="field">
+                <span>Proteine</span>
+                <input type="number" value="140" />
+              </label>
+              <label class="field">
+                <span>Carboidrati</span>
+                <input type="number" value="220" />
+              </label>
+              <label class="field">
+                <span>Grassi</span>
+                <input type="number" value="60" />
+              </label>
+            </div>
+            <div class="settings-summary">
+              <span class="card-helper">2000 kcal · P 140g · C 220g · F 60g</span>
+              <span class="chip">KG</span>
+            </div>
+            <div class="button-row">
+              <button class="cta-button" type="button">Salva target</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-header">
+            <h2>Backup</h2>
+            <p>Esporta o importa i dati in JSON.</p>
+          </div>
+          <div class="card form-card">
+            <button class="secondary-button" type="button">Esporta JSON</button>
+            <div class="field">
+              <span>Importa JSON</span>
+              <input type="file" />
+            </div>
+            <div class="import-preview">
+              <p class="card-value">Anteprima import</p>
+              <p class="card-helper">
+                Template: 2 · Sessioni: 5 · Giorni dieta: 3 · Weigh-ins: 4
+              </p>
+              <label class="checkbox-row">
+                <input type="checkbox" checked />
+                <span>Confermo l'importazione e il merge dei dati.</span>
+              </label>
+              <button class="cta-button" type="button">Importa dati</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-header">
+            <h2>Reset dati</h2>
+            <p>Elimina tutti i dati locali. Azione irreversibile.</p>
+          </div>
+          <div class="card form-card">
+            <button class="secondary-button" type="button">Avvia reset</button>
+            <div class="reset-warning">
+              <p class="card-value">Conferma finale</p>
+              <p class="card-helper">
+                Questo cancellerà allenamenti, diete e pesi.
+              </p>
+              <button class="cta-button" type="button">Conferma reset</button>
+              <button class="ghost-button" type="button">Annulla</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
