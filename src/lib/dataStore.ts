@@ -2,6 +2,7 @@ import localforage from "localforage";
 import type {
   DietDay,
   GymcutData,
+  UserSettings,
   WeighIn,
   WorkoutSession,
   WorkoutTemplate
@@ -15,8 +16,17 @@ const KEYS = {
   workoutTemplates: "workoutTemplates",
   workoutSessions: "workoutSessions",
   dietDays: "dietDays",
-  weighIns: "weighIns"
+  weighIns: "weighIns",
+  settings: "settings"
 } as const;
+
+export const defaultSettings: UserSettings = {
+  caloriesTarget: 2000,
+  proteinTarget: 140,
+  carbsTarget: 220,
+  fatTarget: 60,
+  weightUnit: "kg"
+};
 
 const createId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -119,6 +129,16 @@ export const deleteDietDay = async (date: string) => {
 };
 
 export const listWeighIns = () => getArray<WeighIn>(KEYS.weighIns);
+
+export const getSettings = async () => {
+  const settings = await store.getItem<UserSettings>(KEYS.settings);
+  return settings ?? defaultSettings;
+};
+
+export const saveSettings = async (settings: UserSettings) => {
+  await store.setItem(KEYS.settings, settings);
+  return settings;
+};
 
 export const getWeighIn = async (date: string) => {
   const weighIns = await listWeighIns();

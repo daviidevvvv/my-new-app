@@ -58,3 +58,11 @@ export type GymcutData = {
   dietDays: DietDay[];
   weighIns: WeighIn[];
 };
+
+export type UserSettings = {
+  caloriesTarget: number;
+  proteinTarget: number;
+  carbsTarget: number;
+  fatTarget: number;
+  weightUnit: "kg";
+};
